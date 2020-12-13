@@ -1,0 +1,24 @@
+@import "colors"
+
+@mixin color-button($color)
+  $tone: ''
+  @if $color == 'red'
+    $tone: 20%
+  @else
+    $tone: 12.50%
+  width: 50%
+  height: 50%
+  border-radius: map-get($squared-position, $color)
+  background: map-get($squared-colors, $color)
+
+  &.active, &:active 
+    background: darken(map-get($squared-colors, $color), $tone)
+
+  @media (hover: hover) and (pointer: fine)
+    &:hover
+      position: relative
+      box-shadow: 0 0 10px black
+
+@mixin disabled
+  .disabled
+    pointer-events: none
