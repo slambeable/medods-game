@@ -1,8 +1,10 @@
 <template>
   <div :class='["game-location", isDisabled ? "disabled" : ""]'>
     <div v-for='(color, index) in squaredColors' :key='index'
-         :class='[`game-location__${color}`, isActive[color] ? "active" : ""]'
+         :class='[`game-location__${color}`, isActive[color] || touched[color] ? "active" : ""]'
          @click='clickSquaredHandler'
+         @touchstart='touched[color] = true'
+         @touchend='touched[color] = false'
          :value='color'>
     </div>
   </div>
@@ -11,6 +13,16 @@
 <script>
 export default {
   name: 'gameLocation',
+  data() {
+    return {
+      touched: {
+        blue: false,
+        red: false,
+        yellow: false,
+        green: false,
+      },
+    };
+  },
   props: {
     squaredColors: Array,
     isDisabled: Boolean,
