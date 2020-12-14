@@ -1,5 +1,9 @@
 # medods-game
 
+## Description
+
+The [Simon](https://en.wikipedia.org/wiki/Simon_(game)) game for browser.
+
 ## Project setup
 ```
 npm install
