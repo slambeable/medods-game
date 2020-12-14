@@ -4,6 +4,8 @@
 
 The [Simon](https://en.wikipedia.org/wiki/Simon_(game)) game for browser.
 
+[Git Pages](https://slambeable.github.io/medods-game/)
+
 ## Project setup
 ```
 npm install
